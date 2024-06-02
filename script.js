@@ -40,7 +40,7 @@ var input_text = document.querySelector('input#cidade_digitada');
 var button = document.querySelector("button#btn_pesquisar_cidade");
 var apresentacao = document.querySelector('section#apresentarDados');
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", function (evento) { return __awaiter(_this, void 0, void 0, function () {
-    var localizacao, reposta, dados, infos;
+    var localizacao, reposta, dados, infos, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -54,11 +54,14 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", func
                     window.alert("Digite o nome da cidade");
                     return [2 /*return*/];
                 }
-                return [4 /*yield*/, fetch("https://api.openweathermap.org/data/2.5/weather?q=".concat(localizacao, "&appid=390cb8c8fb7ea2e4f3023ae18eda0de2&lang=pt_br&units=metric"))];
+                _a.label = 1;
             case 1:
+                _a.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, fetch("https://api.openweathermap.org/data/2.5/weather?q=".concat(localizacao, "&appid=390cb8c8fb7ea2e4f3023ae18eda0de2&lang=pt_br&units=metric"))];
+            case 2:
                 reposta = _a.sent();
                 return [4 /*yield*/, reposta.json()];
-            case 2:
+            case 3:
                 dados = _a.sent();
                 console.log(dados);
                 infos = {
@@ -69,8 +72,14 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", func
                 };
                 console.log(infos);
                 apresentacao.innerHTML =
-                    "\n    <div class=\"dados-temperatura\">\n    <p class=\"cidade\">".concat(infos.cidade, "</p>\n    <h2 class=\"temp\"> ").concat(infos.temperatura, "\u00B0C </h2>\n    </div>\n    <div class=\"img\">\n        <p class=\"img_descricao\">").concat(infos.descricao, "</p>\n        <img class=\"imgIcon\" src=\"").concat(infos.icon, "\">\n    </div>\n    \n    ");
-                return [2 /*return*/];
+                    "\n        <div class=\"dados-temperatura\">\n        <p class=\"cidade\">".concat(infos.cidade, "</p>\n        <h2 class=\"temp\"> ").concat(infos.temperatura, "\u00B0C </h2>\n        </div>\n        <div class=\"img\">\n            <p class=\"img_descricao\">").concat(infos.descricao, "</p>\n            <img class=\"imgIcon\" src=\"").concat(infos.icon, "\">\n        </div>\n        \n        ");
+                return [3 /*break*/, 5];
+            case 4:
+                err_1 = _a.sent();
+                window.alert("Cidade não encontrada!");
+                console.log("Erro: ", err_1);
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
         }
     });
 }); });
