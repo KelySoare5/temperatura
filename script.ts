@@ -29,8 +29,8 @@ form?.addEventListener("submit", async (evento) => {
             icon: `https://openweathermap.org/img/wn/${dados.weather[0].icon}@2x.png`
     
         }
-    
-        console.log(infos)
+        
+        // console.log(infos)
         apresentacao.innerHTML= 
         `
         <div class="dados-temperatura">
@@ -43,10 +43,37 @@ form?.addEventListener("submit", async (evento) => {
         </div>
         
         `
+        let alterarTema = dados.weather[0].main
+        backgroundBody(alterarTema)
+        
     } catch (err){ // se der erro
-        window.alert("Cidade não encontrada!")
+        window.alert("Por favor, digite uma cidade!")
         console.log("Erro: ", err)
 
     }
 
+    
+
 })
+
+function backgroundBody(img: string) {
+    let backgroundImage: string;
+
+    switch (img) {
+        case 'Clear':
+            backgroundImage = 'imagens/ceu-limpo.jpg'; // Caminho da imagem de sol
+            break;
+        case 'Clouds':
+            backgroundImage = 'imagens/Nuvens-quebradas.jpg'; // Caminho da imagem de chuva
+            break;
+        case 'rain':
+            backgroundImage = 'imagens/chuva.jpg'
+            break;
+        default:
+            backgroundImage = 'imagens/Poucas-nuvens.jpg'; // Caminho da imagem padrão
+            break;
+    }
+
+    // Altera o estilo do body para usar a nova imagem de fundo
+    document.body.style.backgroundImage = `url(${backgroundImage})`;
+}

@@ -40,7 +40,7 @@ var input_text = document.querySelector('input#cidade_digitada');
 var button = document.querySelector("button#btn_pesquisar_cidade");
 var apresentacao = document.querySelector('section#apresentarDados');
 form === null || form === void 0 ? void 0 : form.addEventListener("submit", function (evento) { return __awaiter(_this, void 0, void 0, function () {
-    var localizacao, reposta, dados, infos, err_1;
+    var localizacao, reposta, dados, infos, alterarTema, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -70,16 +70,37 @@ form === null || form === void 0 ? void 0 : form.addEventListener("submit", func
                     descricao: dados.weather[0].description,
                     icon: "https://openweathermap.org/img/wn/".concat(dados.weather[0].icon, "@2x.png")
                 };
-                console.log(infos);
+                // console.log(infos)
                 apresentacao.innerHTML =
                     "\n        <div class=\"dados-temperatura\">\n        <p class=\"cidade\">".concat(infos.cidade, "</p>\n        <h2 class=\"temp\"> ").concat(infos.temperatura, "\u00B0C </h2>\n        </div>\n        <div class=\"img\">\n            <p class=\"img_descricao\">").concat(infos.descricao, "</p>\n            <img class=\"imgIcon\" src=\"").concat(infos.icon, "\">\n        </div>\n        \n        ");
+                alterarTema = dados.weather[0].main;
+                backgroundBody(alterarTema);
                 return [3 /*break*/, 5];
             case 4:
                 err_1 = _a.sent();
-                window.alert("Cidade não encontrada!");
+                window.alert("Por favor, digite uma cidade!");
                 console.log("Erro: ", err_1);
                 return [3 /*break*/, 5];
             case 5: return [2 /*return*/];
         }
     });
 }); });
+function backgroundBody(img) {
+    var backgroundImage;
+    switch (img) {
+        case 'Clear':
+            backgroundImage = 'imagens/ceu-limpo.jpg'; // Caminho da imagem de sol
+            break;
+        case 'Clouds':
+            backgroundImage = 'imagens/Nuvens-quebradas.jpg'; // Caminho da imagem de chuva
+            break;
+        case 'rain':
+            backgroundImage = 'imagens/chuva.jpg';
+            break;
+        default:
+            backgroundImage = 'imagens/Poucas-nuvens.jpg'; // Caminho da imagem padrão
+            break;
+    }
+    // Altera o estilo do body para usar a nova imagem de fundo
+    document.body.style.backgroundImage = "url(".concat(backgroundImage, ")");
+}

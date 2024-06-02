@@ -1,30 +1,31 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: b;
-}
 
-body{
-    background-color: #1b1b1b;
-    /* Deixando centralizado */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+*{
+    margin: 0; 
+    padding: 0; 
+}
+body {
+    background-image: url('../imagens/tema-principal.jpg'); /* Caminho da imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    height: 100vh; /* Garante que o body tenha a altura total da viewport */
+    width: 100vw; /* Garante que o body tenha a largura total da viewport */
+    display: flex; /* Usar flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 main{
     padding: 20px;
-    /* border: 1px solid black; */
-    background-color: #333333;
+    background-color: #333333c5;
     color: #ffffff;
-    /* width: 80%; */
-    /* padding: 20px; */
+
 }
 main h1.titulo{
-    /* border: 1px solid red; */
+
     margin-bottom: 15px;
 }
+
 /* Section 1 */
 main section.form-text{
     display: flex;
@@ -43,6 +44,7 @@ main section form button#btn_pesquisar_cidade{
     border-radius: 5px;
     padding: 4px 3px;
 }
+
 /* Section 2 */
 main section.infor-cidade{
     display: flex;
@@ -55,7 +57,6 @@ main section div p.cidade{
 
 }
 main section div h2.temp{
-    /* border: 1px solid blue; */
     margin-top: 20px;
 }
 main section div.img{
@@ -64,7 +65,6 @@ main section div.img{
 }
 main section div p.img_descricao{
 
-    /* border: 1px solid blue; */
     text-align: center;
     margin-top: 10px;
 }
