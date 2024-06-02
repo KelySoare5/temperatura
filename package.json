@@ -1,0 +1,15 @@
+{
+  "name": "temperatura",
+  "version": "1.0.0",
+  "description": "TITULO:\r Site de temperatura.\r RESUMO:\r Esse site apresenta a cidade e sua temperatura em tempo real.\r TECNOLOGIAS UTILIZADAS:\r TypeScript, e a API: https://openweathermap.org/current\r HABILIDADES DESENVOLVIDAS:\r ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
