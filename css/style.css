@@ -4,6 +4,7 @@
     padding: 0; 
 }
 body {
+    font-family: 'Roboto', sans-serif;
     background-image: url('../imagens/tema-principal.jpg'); /* Caminho da imagem */
     background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
     background-position: center; /* Centraliza a imagem */
