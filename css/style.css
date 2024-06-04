@@ -13,12 +13,15 @@ body {
     display: flex; /* Usar flexbox para centralizar o conteúdo */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
+    
 }
+
 
 main{
     padding: 20px;
-    background-color: #333333c5;
+    background-color: #333333d7;
     color: #ffffff;
+    border-radius: 5px;
 
 }
 main h1.titulo{
